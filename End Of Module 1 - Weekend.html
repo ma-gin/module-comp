@@ -34,11 +34,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="main.js" defer></script>
     <title>Document</title>
+    <style>
+        input{
+            padding: 0.5rem;
+            margin: 0.25rem;
+        }
+    </style>
 </head>
 <body>
     <h1 id="pageHeader">Page Header</h1>
     <h3>Page Subtitle</h3>
-    <table>
+    <section>
+        <h4>Add New Student</h4>
+        <form action="none" style="border: 2px solid black; width: 60%; margin: 1rem auto; text-align: right;">
+            <label for="ID">Student ID</label>
+            <input type="text" id="ID" placeholder="Student ID"><br>
+            <label for="name">Student First Name</label>
+            <input type="text" id="studentName" placeholder="Student Name"><br>
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" placeholder="Surname"><br>
+            <label for="age">Age</label>
+            <input type="text" id="age" placeholder="Age"><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email">
+        </form>
+        <button type="button" style="display: block; margin: 0 auto;" onclick="addStudent()">Add Student</button>
+    </section>
+    <table id="studentTable">
         <tr>
             <td>ID</td>
             <td>Name</td>
