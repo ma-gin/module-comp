@@ -1,5 +1,8 @@
 const input = document.getElementById('textChange')
 const enrolled = document.getElementById('enrolledContainer')
+const counter = document.getElementById('counter')
+
+counter.innerText = enrolled.childElementCount
 
 const textChange = () => {
     if (!input.value) {
@@ -12,6 +15,7 @@ const textChange = () => {
 
 const removeItem = (e) => {
     e.target.parentNode.remove()
+    counter.innerText = enrolled.childElementCount
 }
 
 const addStudent = () => {
@@ -38,7 +42,7 @@ const addStudent = () => {
     newTd.innerHTML = studentEmail.value
     newRow.appendChild(newTd)
     table.appendChild(newRow)
-
+    counter.innerText = enrolled.childElementCount
 }
 
 const addDeleteBtn = () => {
@@ -58,4 +62,5 @@ const addItem = () => {
     listItem.appendChild(itemContent)
     const deleteBtn = addDeleteBtn()
     listItem.appendChild(deleteBtn)
+    counter.innerText = enrolled.childElementCount
 }
