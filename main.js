@@ -1,6 +1,7 @@
 const input = document.getElementById('textChange')
 const enrolled = document.getElementById('enrolledContainer')
 const counter = document.getElementById('counter')
+const header = document.getElementById('pageHeader')
 
 counter.innerText = enrolled.childElementCount
 
@@ -56,11 +57,54 @@ const addDeleteBtn = () => {
 const addItem = () => {
     const listItem = document.createElement('div')
     const itemContent = document.createElement('p')
-    listItem.style.backgroundColor = "blue"
     listItem.style.border = "1px solid red"
     enrolled.appendChild(listItem)
     listItem.appendChild(itemContent)
     const deleteBtn = addDeleteBtn()
     listItem.appendChild(deleteBtn)
     counter.innerText = enrolled.childElementCount
+}
+
+const ex16 = () => {
+    const listItems = enrolled.childNodes //get array of children elements
+    console.log(listItems)
+    for (i = 0; i < enrolled.childElementCount; i++){
+        listItems[i].style.backgroundColor = "red"
+    }
+}
+
+const ex17 = () => {
+    const newP = document.createElement('p')
+    if (enrolled.childElementCount === 1) {
+        newP.innerHTML = `There is ${enrolled.childElementCount} element in the list.`
+    } else {
+        newP.innerHTML = `There are ${enrolled.childElementCount} elements in the list.`
+    }
+    const section = document.getElementById('enrolledSection')
+    section.appendChild(newP)
+}
+
+const ex18 = () => {
+    const subHeader = document.getElementById('pageSubheader')
+    const headerText = header.innerText
+    header.innerText = subHeader.innerText
+    subHeader.innerText = headerText
+}
+
+const randomColorGenerator = () => {
+    const red = Math.floor(Math.random() * 255)
+    const green = Math.floor(Math.random() * 255)
+    const blue = Math.floor(Math.random() * 255)
+    return `rgb(${red}, ${green}, ${blue})`
+}
+
+const ex19 = () => {
+    const table = document.getElementById('studentTable')
+    const color = randomColorGenerator()
+    table.style.backgroundColor = color
+}
+
+const ex20 = () => {
+    const colorInput = document.getElementById('colorInput')
+    header.style.color = colorInput.value
 }
