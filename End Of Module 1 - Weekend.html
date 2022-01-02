@@ -39,22 +39,29 @@
             padding: 0.5rem;
             margin: 0.25rem;
         }
+        .header-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
     </style>
 </head>
 <body>
 
-    <input id="textChange" type="text">
-    <button type="button" onclick="textChange()">Change</button>
-
-    <h1 id="pageHeader">Page Header</h1>
-    <input id="colorInput" type="color">
-    <h3 id="pageSubheader" style="display: inline;">Page Subtitle</h3>
-    <div class="extras" style="display: inline; margin-left: 5rem;">
-        <button id="ex16" class="extra" onclick="ex16()">16</button>
-        <button id="ex17" class="extra" onclick="ex17()">17</button>
-        <button id="ex18" class="extra" onclick="ex18()">18</button>
-        <button id="ex19" class="extra" onclick="ex19()">19</button>
-        <button id="ex20" class="extra" onclick="ex20()">20</button>
+    <div class="header-wrapper">
+        <label for="textChange">Write something and press the button.</label>
+        <input id="textChange" type="text" style="margin: 3rem;">
+        <button type="button" style="padding: 1rem;"  onclick="textChange()">Click Me</button>
+        <h1 id="pageHeader">Page Header</h1>
+        <input id="colorInput" type="color">
+        <h3 id="pageSubheader" style="display: inline;">Page Subtitle</h3>
+        <div class="extras" style="display: inline;">
+            <button id="ex16" class="extra" onclick="ex16()">16</button>
+            <button id="ex17" class="extra" onclick="ex17()">17</button>
+            <button id="ex18" class="extra" onclick="ex18()">18</button>
+            <button id="ex19" class="extra" onclick="ex19()">19</button>
+        </div>
     </div>
     <section>
         <h4>Add New Student</h4>

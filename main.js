@@ -2,8 +2,22 @@ const input = document.getElementById('textChange')
 const enrolled = document.getElementById('enrolledContainer')
 const counter = document.getElementById('counter')
 const header = document.getElementById('pageHeader')
+const colorInput = document.getElementById('colorInput')
+const moviesList = document.getElementById('fav-movies')
 
 counter.innerText = enrolled.childElementCount
+
+colorInput.addEventListener('change', () => {
+    header.style.color = colorInput.value
+})
+
+moviesList.addEventListener('change', () => {
+    header.innerText = moviesList.value
+})
+
+input.addEventListener('change', () => {
+    header.innerText = input.value
+})
 
 const textChange = () => {
     if (!input.value) {
@@ -104,7 +118,7 @@ const ex19 = () => {
     table.style.backgroundColor = color
 }
 
-const ex20 = () => {
-    const colorInput = document.getElementById('colorInput')
-    header.style.color = colorInput.value
-}
+// const ex20 = () => {
+//     const colorInput = document.getElementById('colorInput')
+//     header.style.color = colorInput.value
+// }
